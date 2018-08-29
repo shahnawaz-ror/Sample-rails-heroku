@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = current_user.students
   end
 
   # GET /students/1
@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new
+    @student = current_user.students.new
   end
 
   # GET /students/1/edit
@@ -25,8 +25,7 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
-    @student = Student.new(student_params)
-
+    @student = current_user.students.new(student_params)
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
@@ -36,6 +35,7 @@ class StudentsController < ApplicationController
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end
     end
+    ActionCable.server.broadcast 'web_notifications_channel', message: current_user.students.count
   end
 
   # PATCH/PUT /students/1
@@ -60,6 +60,7 @@ class StudentsController < ApplicationController
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
       format.json { head :no_content }
     end
+    ActionCable.server.broadcast 'web_notifications_channel', message: current_user.students.count
   end
 
   private
