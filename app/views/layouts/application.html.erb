@@ -33,9 +33,6 @@
                   <%= content_tag :span, " Logout", :class => "glyphicon glyphicon-log-out" %>
                 <% end %>       
               </li>
-              <li>
-                <a class="glyphicon glyphicon-bell" style="font-size:15px;color:white" id="notification-count"> students <%= current_user.students.count %></a>
-              </li>
             <% else %>
             <li>
               <%= link_to new_user_registration_path do %>

@@ -35,7 +35,7 @@ class StudentsController < ApplicationController
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end
     end
-    ActionCable.server.broadcast 'web_notifications_channel', message: current_user.students.count
+    # ActionCable.server.broadcast 'web_notifications_channel', message: current_user.students.count
   end
 
   # PATCH/PUT /students/1
@@ -60,7 +60,7 @@ class StudentsController < ApplicationController
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
       format.json { head :no_content }
     end
-    ActionCable.server.broadcast 'web_notifications_channel', message: current_user.students.count
+    # ActionCable.server.broadcast 'web_notifications_channel', message: current_user.students.count
   end
 
   private
