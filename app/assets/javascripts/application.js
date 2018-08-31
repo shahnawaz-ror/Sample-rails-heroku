@@ -15,7 +15,6 @@
 //= require bootstrap-sprockets
 //= require jquery-ui
 //= require best_in_place.jquery-ui
-//= require dataTables/jquery.dataTables
 
 //= require rails-ujs
 //= require jquery-ui/widgets/sortable
@@ -23,6 +22,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-$(function() {
-  $('.sortable').railsSortable();
+
+$(document).ready(function() {
+  jQuery(".best_in_place").best_in_place();
 });

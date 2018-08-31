@@ -70,4 +70,3 @@ gem 'bootstrap-sass'
 gem "paperclip"
 gem 'rails_12factor', group: :production
 gem 'rails_sortable'
-gem 'jquery-datatables-rails'
