@@ -17,6 +17,11 @@
 //= require best_in_place.jquery-ui
 
 //= require rails-ujs
+//= require jquery-ui/widgets/sortable
+//= require rails_sortable
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+$(function() {
+  $('.sortable').railsSortable();
+});

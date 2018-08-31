@@ -69,3 +69,4 @@ gem 'bootstrap-sass'
 # gem 'sass-rails'
 gem "paperclip"
 gem 'rails_12factor', group: :production
+gem 'rails_sortable'
