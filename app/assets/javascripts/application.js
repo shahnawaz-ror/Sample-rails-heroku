@@ -15,7 +15,7 @@
 //= require bootstrap-sprockets
 //= require jquery-ui
 //= require best_in_place.jquery-ui
-
+//= require cocoon
 //= require rails-ujs
 //= require jquery-ui/widgets/sortable
 //= require rails_sortable

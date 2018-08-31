@@ -7,4 +7,6 @@ class Product < ApplicationRecord
     medium: '60x50>'
   }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  has_many :tasks, inverse_of: :product, dependent: :destroy
+  accepts_nested_attributes_for :tasks, reject_if: :all_blank, allow_destroy: true
 end

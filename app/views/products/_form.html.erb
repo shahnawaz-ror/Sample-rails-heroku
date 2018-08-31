@@ -41,6 +41,13 @@
       <%= form.label :image %>
       <%= form.file_field :image, :class => "form-control" %>
     </div>
+    <div class="container">
+      <%= form.fields_for :tasks do |task| %>
+      <%= render "task_fields", :form => task %>
+
+      <% end %>
+      <%= link_to_add_association 'add task', form, :tasks  %>
+    </div>
 
     <div class="actions">
       <%= form.submit class: "form-control" %>
