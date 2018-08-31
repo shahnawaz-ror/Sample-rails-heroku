@@ -68,3 +68,4 @@ gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'bootstrap-sass'
 # gem 'sass-rails'
 gem "paperclip"
+gem 'rails_12factor', group: :production
