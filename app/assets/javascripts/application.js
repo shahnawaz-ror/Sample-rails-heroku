@@ -15,6 +15,7 @@
 //= require bootstrap-sprockets
 //= require jquery-ui
 //= require best_in_place.jquery-ui
+//= require dataTables/jquery.dataTables
 
 //= require rails-ujs
 //= require jquery-ui/widgets/sortable
