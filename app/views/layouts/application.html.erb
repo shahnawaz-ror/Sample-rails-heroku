@@ -33,6 +33,13 @@
                   <%= content_tag :span, " Logout", :class => "glyphicon glyphicon-log-out" %>
                 <% end %>       
               </li>
+              <li>
+                <% if current_user.image.path.present? %>
+                  <%= link_to(image_tag(current_user.image.url(:thumb), :witdh => "30", :height => "25"), edit_user_registration_path) %>
+                <% else %>
+                  <%= link_to(image_tag("/assets/user.png", :witdh => "30", :height => "25"), edit_user_registration_path) %>
+                <% end %>
+              </li>
             <% else %>
             <li>
               <%= link_to new_user_registration_path do %>
