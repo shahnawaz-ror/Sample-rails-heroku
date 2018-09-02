@@ -9,4 +9,13 @@ class Product < ApplicationRecord
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   has_many :tasks, inverse_of: :product, dependent: :destroy
   accepts_nested_attributes_for :tasks, reject_if: :all_blank, allow_destroy: true
+
+
+  def self.search(search)
+    if search
+      Product.where("name like ? OR description like ? OR quantity like ? OR price like ?","%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      Product.all
+    end
+  end
 end
