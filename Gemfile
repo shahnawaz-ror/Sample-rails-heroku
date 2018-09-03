@@ -71,3 +71,4 @@ gem "paperclip"
 gem 'rails_12factor', group: :production
 gem 'rails_sortable'
 gem 'cocoon'
+gem 'will_paginate-bootstrap' 

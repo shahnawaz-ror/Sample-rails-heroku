@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :students
+  has_many :products
   has_attached_file :image, styles: {
     thumb: '20x15>',
     square: '200x200#',
