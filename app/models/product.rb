@@ -13,7 +13,7 @@ class Product < ApplicationRecord
 
   def self.search(search,user)
     if search
-      user.products.where("name like ? OR description like ? OR quantity like ? OR price like ?","%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+      user.products.where("name LIKE ? or description LIKE ?","%#{search}%","%#{search}%")
     else
       user.products.all
     end
